@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBoi - Pecuária 4.0</title>
+    <style>
+        /* --- Configurações Gerais --- */
+        :root {
+            --primary-blue: #0056b3; /* Azul da logo */
+            --accent-green: #2e7d32; /* Verde Agro */
+            --light-gray: #f4f6f8;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        a { text-decoration: none; }
+        ul { list-style: none; }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 60px; /* Ajuste conforme necessário */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #004494;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1546445317-29f4545e9d53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Imagem genérica de gado */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .btn-large {
+            background-color: var(--accent-green);
+            color: var(--white);
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .hero .btn-large:hover {
+            transform: scale(1.05);
+            background-color: #1b5e20;
+        }
+
+        /* --- Problema --- */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-blue);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #d32f2f;
+        }
+
+        /* --- Solução --- */
+        .solution {
+            background-color: var(--white);
+        }
+
+        .solution-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .solution-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .solution-text ul {
+            margin-top: 20px;
+        }
+
+        .solution-text li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .solution-text li::before {
+            content: "✔";
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .solution-img {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .solution-img img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- Benefícios (Icones) --- */
+        .benefits {
+            background-color: var(--light-gray);
+        }
+        
+        .benefit-item h3 {
+            color: var(--primary-blue);
+        }
+
+        /* --- Equipe --- */
+        .team {
+            text-align: center;
+        }
+
+        .team-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #222;
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .navbar { flex-direction: column; height: auto; padding: 20px 0; }
+            .nav-links { margin-top: 20px; flex-direction: column; text-align: center; }
+            .cta-button { display: none; } /* Esconde botão do menu no mobile p/ simplificar */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <img src="logo.jpeg" alt="Logo FaceBoi - Boi com Câmera">
+                <span style="font-weight: bold; font-size: 1.5rem; color: var(--primary-blue); vertical-align: middle; margin-left: 10px;">FaceBoi</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#problema">O Problema</a></li>
+                <li><a href="#solucao">A Solução</a></li>
+                <li><a href="#beneficios">Benefícios</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="#contato" class="cta-button">Falar com Consultor</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Pesagem de Gado Inteligente<br>Sem Estresse e Sem Balança</h1>
+            <p>Utilizamos Visão Computacional e Inteligência Artificial para monitorar o peso do seu rebanho em tempo real. Ideal para pequenos e médios produtores.</p>
+            <br>
+            <a href="#contato" class="btn-large">Quero Modernizar Minha Produção</a>
+        </div>
+    </section>
+
+    <section id="problema" class="section">
+        <div class="container">
+            <h2 class="section-title">Por que mudar a forma de pesar?</h2>
+            <div class="problem-grid">
+                <div class="card">
+                    <h3>Estresse Animal</h3>
+                    <p>O manejo em currais e balanças mecânicas estressa o gado, o que reduz o ganho de peso e prejudica o bem-estar.</p>
+                </div>
+                <div class="card">
+                    <h3>Imprecisão</h3>
+                    <p>O "olhômetro" ou balanças antigas geram dados imprecisos, resultando em perdas financeiras e falta de previsibilidade.</p>
+                </div>
+                <div class="card">
+                    <h3>Mão de Obra</h3>
+                    <p>A pesagem tradicional é demorada, exige vários operadores e aumenta o risco de acidentes de trabalho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucao" class="section solution">
+        <div class="container">
+            <h2 class="section-title">Como funciona o FaceBoi</h2>
+            <div class="solution-content">
+                <div class="solution-text">
+                    <p>Desenvolvemos uma plataforma completa de <strong>Pecuária 4.0</strong> que elimina a necessidade de confinamento para pesagem.</p>
+                    <ul>
+                        <li><strong>Passagem Livre:</strong> O gado passa naturalmente por um corredor monitorado.</li>
+                        <li><strong>Visão Computacional:</strong> 3 Câmeras capturam múltiplos ângulos e nossa IA calcula o peso baseada no volume.</li>
+                        <li><strong>Identificação RFID:</strong> O sistema reconhece cada animal individualmente pelo brinco.</li>
+                        <li><strong>Energia Solar:</strong> O sistema é autônomo e funciona mesmo em locais remotos.</li>
+                    </ul>
+                </div>
+                <div class="solution-img">
+                    <img src="diagrama.png" alt="Esquema de funcionamento FaceBoi">
+                    <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">Sistema de câmeras e RFID alimentado por energia solar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="section benefits">
+        <div class="container">
+            <h2 class="section-title">Tecnologia Acessível</h2>
+            <div class="problem-grid">
+                <div class="card benefit-item">
+                    <h3>💰 Baixo Custo</h3>
+                    <p>Mais acessível que balanças 3D ou drones. Focado na realidade da agricultura familiar e médias propriedades.</p>
+                </div>
+                <div class="card benefit-item">
+                    <h3>🌵 Focado no Nordeste</h3>
+                    <p>Algoritmos de IA treinados especificamente para as raças e condições climáticas da nossa região.</p>
+                </div>
+                <div class="card benefit-item">
+                    <h3>📱 Dados na Nuvem</h3>
+                    <p>Acompanhe o ganho de peso, saúde e histórico de cada boi diretamente pelo computador ou smartphone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section team">
+        <div class="container">
+            <h2 class="section-title">Quem Somos</h2>
+            <p class="team-description">
+                Somos uma equipe que une a academia ao campo. Engenheiros da UFC e UECE com vivência real na pecuária e especialização em sistemas embarcados e Inteligência Artificial.
+            </p>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <h2>Leve o FaceBoi para sua propriedade</h2>
+                <p>Entre em contato para saber mais sobre o projeto piloto e disponibilidade.</p>
+                
+                <div class="contact-info" style="margin-top: 30px;">
+                    <p>📧 Email: <strong>comercial@faceboi.com.br</strong></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 FaceBoi Tecnologia. Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px;">Projeto alinhado aos ODS da ONU [YouTube Pitch].</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
