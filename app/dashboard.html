@@ -174,10 +174,265 @@
         
         <!-- Seção: Relatórios -->
         <section id="reports" class="content-section">
-            <div class="reports-placeholder">
-                <div class="placeholder-icon">📊</div>
-                <h3>Relatórios em Breve</h3>
-                <p>Estamos desenvolvendo relatórios detalhados para você acompanhar a evolução do seu rebanho.</p>
+            <div class="reports-header">
+                <div class="report-period">
+                    <label>Período:</label>
+                    <select id="reportPeriod">
+                        <option value="7">Últimos 7 dias</option>
+                        <option value="30" selected>Últimos 30 dias</option>
+                        <option value="90">Últimos 90 dias</option>
+                    </select>
+                </div>
+                <button class="btn-export" onclick="alert('Exportação disponível em breve!')">
+                    📥 Exportar PDF
+                </button>
+            </div>
+
+            <div class="reports-grid">
+                <!-- Resumo Geral -->
+                <div class="report-card full-width">
+                    <div class="report-card-header">
+                        <h3>📈 Resumo do Período</h3>
+                        <span class="report-period-label">Últimos 30 dias</span>
+                    </div>
+                    <div class="report-summary">
+                        <div class="summary-item">
+                            <div class="summary-icon">🐄</div>
+                            <div class="summary-data">
+                                <span class="summary-value">48</span>
+                                <span class="summary-label">Total de Animais</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">⚖️</div>
+                            <div class="summary-data">
+                                <span class="summary-value">+598 kg</span>
+                                <span class="summary-label">Ganho Total</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">📊</div>
+                            <div class="summary-data">
+                                <span class="summary-value">+12.5 kg</span>
+                                <span class="summary-label">Ganho Médio/Animal</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">🎯</div>
+                            <div class="summary-data">
+                                <span class="summary-value">92%</span>
+                                <span class="summary-label">Meta Atingida</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Evolução de Peso -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>📉 Evolução do Peso Médio</h3>
+                    </div>
+                    <div class="chart-container">
+                        <div class="mock-chart line-chart">
+                            <div class="chart-y-axis">
+                                <span>450kg</span>
+                                <span>425kg</span>
+                                <span>400kg</span>
+                                <span>375kg</span>
+                            </div>
+                            <div class="chart-area">
+                                <svg viewBox="0 0 300 150" class="line-svg">
+                                    <polyline
+                                        fill="none"
+                                        stroke="#0056b3"
+                                        stroke-width="3"
+                                        points="0,120 50,105 100,95 150,80 200,65 250,50 300,40"
+                                    />
+                                    <circle cx="0" cy="120" r="5" fill="#0056b3"/>
+                                    <circle cx="50" cy="105" r="5" fill="#0056b3"/>
+                                    <circle cx="100" cy="95" r="5" fill="#0056b3"/>
+                                    <circle cx="150" cy="80" r="5" fill="#0056b3"/>
+                                    <circle cx="200" cy="65" r="5" fill="#0056b3"/>
+                                    <circle cx="250" cy="50" r="5" fill="#0056b3"/>
+                                    <circle cx="300" cy="40" r="5" fill="#2e7d32"/>
+                                </svg>
+                            </div>
+                            <div class="chart-x-axis">
+                                <span>Sem 1</span>
+                                <span>Sem 2</span>
+                                <span>Sem 3</span>
+                                <span>Sem 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frequência de Visitas ao Cocho -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>🍽️ Visitas ao Cocho (Média Diária)</h3>
+                    </div>
+                    <div class="chart-container">
+                        <div class="bar-chart-horizontal">
+                            <div class="bar-row">
+                                <span class="bar-name">Segunda</span>
+                                <div class="bar-wrapper">
+                                    <div class="bar-h" style="width: 92%;">5.5</div>
+                                </div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-name">Terça</span>
+                                <div class="bar-wrapper">
+                                    <div class="bar-h" style="width: 88%;">5.3</div>
+                                </div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-name">Quarta</span>
+                                <div class="bar-wrapper">
+                                    <div class="bar-h" style="width: 95%;">5.7</div>
+                                </div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-name">Quinta</span>
+                                <div class="bar-wrapper">
+                                    <div class="bar-h" style="width: 85%;">5.1</div>
+                                </div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-name">Sexta</span>
+                                <div class="bar-wrapper">
+                                    <div class="bar-h" style="width: 90%;">5.4</div>
+                                </div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-name">Sábado</span>
+                                <div class="bar-wrapper">
+                                    <div class="bar-h" style="width: 78%;">4.7</div>
+                                </div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-name">Domingo</span>
+                                <div class="bar-wrapper">
+                                    <div class="bar-h" style="width: 75%;">4.5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Performers -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>🏆 Maior Ganho de Peso</h3>
+                    </div>
+                    <div class="top-list">
+                        <div class="top-item">
+                            <span class="top-rank gold">1º</span>
+                            <div class="top-info">
+                                <span class="top-name">Tornado (RFID-006-K5L2)</span>
+                                <span class="top-detail">Nelore • 26 meses</span>
+                            </div>
+                            <span class="top-value positive">+55 kg</span>
+                        </div>
+                        <div class="top-item">
+                            <span class="top-rank silver">2º</span>
+                            <div class="top-info">
+                                <span class="top-name">Sultão (RFID-001-A7B3)</span>
+                                <span class="top-detail">Nelore • 24 meses</span>
+                            </div>
+                            <span class="top-value positive">+53 kg</span>
+                        </div>
+                        <div class="top-item">
+                            <span class="top-rank bronze">3º</span>
+                            <div class="top-info">
+                                <span class="top-name">Valente (RFID-008-O6P8)</span>
+                                <span class="top-detail">Nelore • 23 meses</span>
+                            </div>
+                            <span class="top-value positive">+45 kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animais que Precisam de Atenção -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>⚠️ Requerem Atenção</h3>
+                    </div>
+                    <div class="top-list">
+                        <div class="top-item warning-item">
+                            <span class="top-rank warning-rank">!</span>
+                            <div class="top-info">
+                                <span class="top-name">Ventania (RFID-005-I3J7)</span>
+                                <span class="top-detail">Perda de peso • Baixa frequência no cocho</span>
+                            </div>
+                            <span class="top-value negative">-6 kg</span>
+                        </div>
+                        <div class="top-item warning-item">
+                            <span class="top-rank warning-rank">!</span>
+                            <div class="top-info">
+                                <span class="top-name">Relâmpago (RFID-003-E2F6)</span>
+                                <span class="top-detail">Ganho abaixo da média • 2.1 visitas/dia</span>
+                            </div>
+                            <span class="top-value neutral">+4 kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Distribuição por Raça -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>🐂 Distribuição por Raça</h3>
+                    </div>
+                    <div class="pie-chart-container">
+                        <div class="pie-chart">
+                            <div class="pie-segment nelore" style="--percentage: 75;"></div>
+                        </div>
+                        <div class="pie-legend">
+                            <div class="legend-item">
+                                <span class="legend-color nelore-color"></span>
+                                <span>Nelore - 75% (36)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color guzera-color"></span>
+                                <span>Guzerá - 12.5% (6)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color tabapua-color"></span>
+                                <span>Tabapuã - 12.5% (6)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saúde do Rebanho -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <h3>💚 Saúde do Rebanho</h3>
+                    </div>
+                    <div class="health-stats">
+                        <div class="health-item">
+                            <div class="health-circle healthy-circle">
+                                <span>85%</span>
+                            </div>
+                            <span class="health-label">Saudáveis</span>
+                            <span class="health-count">41 animais</span>
+                        </div>
+                        <div class="health-item">
+                            <div class="health-circle warning-circle">
+                                <span>10%</span>
+                            </div>
+                            <span class="health-label">Atenção</span>
+                            <span class="health-count">5 animais</span>
+                        </div>
+                        <div class="health-item">
+                            <div class="health-circle critical-circle">
+                                <span>5%</span>
+                            </div>
+                            <span class="health-label">Crítico</span>
+                            <span class="health-count">2 animais</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
