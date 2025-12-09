@@ -1,0 +1,70 @@
+/* --- Configurações Gerais --- */
+:root {
+    --primary-blue: #0056b3;
+    --accent-green: #2e7d32;
+    --light-gray: #f4f6f8;
+    --dark-gray: #333;
+    --white: #ffffff;
+    --warning-yellow: #f9a825;
+    --danger-red: #d32f2f;
+    --success-green: #388e3c;
+    --sidebar-width: 260px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+code {
+    background-color: var(--light-gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Utilitários */
+.hidden {
+    display: none !important;
+}
+
+/* Badges */
+.badge {
+    background-color: var(--danger-red);
+    color: var(--white);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 8px;
+}
+
+/* Status indicators */
+.status-healthy {
+    color: var(--success-green);
+}
+
+.status-warning {
+    color: var(--warning-yellow);
+}
+
+.status-critical {
+    color: var(--danger-red);
+}

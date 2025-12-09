@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBoi - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../logo.png" alt="Logo FaceBoi" class="sidebar-logo">
+            <h2>FaceBoi</h2>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="overview">
+                <span class="nav-icon">📊</span>
+                Visão Geral
+            </a>
+            <a href="#" class="nav-item" data-section="cattle">
+                <span class="nav-icon">🐄</span>
+                Rebanho
+            </a>
+            <a href="#" class="nav-item" data-section="alerts">
+                <span class="nav-icon">⚠️</span>
+                Alertas
+                <span class="badge" id="alertBadge">2</span>
+            </a>
+            <a href="#" class="nav-item" data-section="reports">
+                <span class="nav-icon">📈</span>
+                Relatórios
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">👤</div>
+                <div class="user-details">
+                    <span class="user-name" id="userName">Agricultor</span>
+                    <span class="user-farm" id="userFarm">Fazenda Demo</span>
+                </div>
+            </div>
+            <button class="btn-logout" id="logoutBtn">Sair</button>
+        </div>
+    </aside>
+    
+    <main class="main-content">
+        <header class="top-bar">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <h1 class="page-title" id="pageTitle">Visão Geral</h1>
+            <div class="top-bar-actions">
+                <span class="current-date" id="currentDate"></span>
+            </div>
+        </header>
+        
+        <!-- Seção: Visão Geral -->
+        <section id="overview" class="content-section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🐄</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="totalCattle">48</span>
+                        <span class="stat-label">Total de Animais</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚖️</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="avgWeight">425 kg</span>
+                        <span class="stat-label">Peso Médio</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="weightGain">+12.5 kg</span>
+                        <span class="stat-label">Ganho Médio (30d)</span>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="alerts">2</span>
+                        <span class="stat-label">Alertas de Saúde</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="card large">
+                    <div class="card-header">
+                        <h3>Últimas Passagens pelo Cocho</h3>
+                        <span class="card-subtitle">Últimas 24 horas</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="activity-list" id="recentActivity">
+                            <!-- Populado por JS -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Distribuição de Peso</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="weight-distribution">
+                            <div class="weight-bar">
+                                <div class="bar-label">< 350kg</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width: 15%;">8</div>
+                                </div>
+                            </div>
+                            <div class="weight-bar">
+                                <div class="bar-label">350-400kg</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width: 25%;">12</div>
+                                </div>
+                            </div>
+                            <div class="weight-bar">
+                                <div class="bar-label">400-450kg</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width: 40%;">18</div>
+                                </div>
+                            </div>
+                            <div class="weight-bar">
+                                <div class="bar-label">> 450kg</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width: 20%;">10</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção: Rebanho -->
+        <section id="cattle" class="content-section">
+            <div class="section-header">
+                <div class="search-box">
+                    <input type="text" id="searchCattle" placeholder="Buscar por ID ou nome...">
+                </div>
+                <div class="filter-options">
+                    <select id="filterWeight">
+                        <option value="">Todos os pesos</option>
+                        <option value="light">< 350kg</option>
+                        <option value="medium">350-450kg</option>
+                        <option value="heavy">> 450kg</option>
+                    </select>
+                    <select id="filterHealth">
+                        <option value="">Todas condições</option>
+                        <option value="healthy">Saudável</option>
+                        <option value="warning">Atenção</option>
+                        <option value="critical">Crítico</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="cattle-grid" id="cattleGrid">
+                <!-- Populado por JS -->
+            </div>
+        </section>
+        
+        <!-- Seção: Alertas -->
+        <section id="alerts" class="content-section">
+            <div class="alerts-list" id="alertsList">
+                <!-- Populado por JS -->
+            </div>
+        </section>
+        
+        <!-- Seção: Relatórios -->
+        <section id="reports" class="content-section">
+            <div class="reports-placeholder">
+                <div class="placeholder-icon">📊</div>
+                <h3>Relatórios em Breve</h3>
+                <p>Estamos desenvolvendo relatórios detalhados para você acompanhar a evolução do seu rebanho.</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal de Detalhes do Boi -->
+    <div class="modal-overlay" id="cattleModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Conteúdo dinâmico -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
