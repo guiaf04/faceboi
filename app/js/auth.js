@@ -86,15 +86,12 @@ function setupLoginForm() {
 
 // Protege rotas que precisam de autenticação
 function protectRoute() {
-    const currentPage = window.location.pathname.split('/').pop();
+    const path = window.location.pathname;
+    const isDashboardPage = path.endsWith('dashboard.html');
     
-    if (currentPage === 'dashboard.html' && !isAuthenticated()) {
-        window.location.href = 'login.html';
-        return false;
-    }
-    
-    if (currentPage === 'login.html' && isAuthenticated()) {
-        window.location.href = 'dashboard.html';
+    // Só protege o dashboard - redireciona para login se não autenticado
+    if (isDashboardPage && !isAuthenticated()) {
+        window.location.replace('login.html');
         return false;
     }
     
@@ -103,7 +100,6 @@ function protectRoute() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
-    protectRoute();
     setupLoginForm();
     
     // Setup logout button

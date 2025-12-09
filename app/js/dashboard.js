@@ -3,6 +3,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Verifica autenticação antes de iniciar
+    if (!isAuthenticated()) {
+        window.location.replace('login.html');
+        return;
+    }
     initDashboard();
 });
 
