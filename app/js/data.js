@@ -23,10 +23,10 @@ const MOCK_CATTLE = [
         avgDailyVisits: 5.2,
         lastVisit: "08/12/2025 14:32",
         photos: [
-            { camera: "Câmera Frontal", timestamp: "08/12/2025 14:32", url: "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=400" },
-            { camera: "Câmera Lateral Esq.", timestamp: "08/12/2025 14:32", url: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=400" },
-            { camera: "Câmera Lateral Dir.", timestamp: "08/12/2025 14:32", url: "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=400" },
-            { camera: "Câmera Superior", timestamp: "08/12/2025 14:32", url: "https://images.unsplash.com/photo-1564429238535-0164a85c8dc4?w=400" }
+            { camera: "Câmera Frontal", timestamp: "08/12/2025 14:32", url: "../assets/boi1/frente.jpeg" },
+            { camera: "Câmera Lateral Esq.", timestamp: "08/12/2025 14:32", url: "../assets/boi1/esquerda.jpeg" },
+            { camera: "Câmera Lateral Dir.", timestamp: "08/12/2025 14:32", url: "../assets/boi1/direita.jpeg" },
+            { camera: "Câmera Superior", timestamp: "08/12/2025 14:32", url: "../assets/boi1/tras.jpeg" }
         ]
     },
     {
@@ -48,10 +48,10 @@ const MOCK_CATTLE = [
         avgDailyVisits: 4.8,
         lastVisit: "08/12/2025 13:45",
         photos: [
-            { camera: "Câmera Frontal", timestamp: "08/12/2025 13:45", url: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=400" },
-            { camera: "Câmera Lateral Esq.", timestamp: "08/12/2025 13:45", url: "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=400" },
-            { camera: "Câmera Lateral Dir.", timestamp: "08/12/2025 13:45", url: "https://images.unsplash.com/photo-1564429238535-0164a85c8dc4?w=400" },
-            { camera: "Câmera Superior", timestamp: "08/12/2025 13:45", url: "https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=400" }
+            { camera: "Câmera Frontal", timestamp: "08/12/2025 13:45", url: "../assets/boi2/frente.jpeg" },
+            { camera: "Câmera Lateral Esq.", timestamp: "08/12/2025 13:45", url: "../assets/boi2/esquerda.jpeg" },
+            { camera: "Câmera Lateral Dir.", timestamp: "08/12/2025 13:45", url: "../assets/boi2/esquerda.jpeg" },
+            { camera: "Câmera Superior", timestamp: "08/12/2025 13:45", url: "../assets/boi2/tras.jpeg" }
         ]
     },
     {
