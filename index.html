@@ -88,7 +88,7 @@
 
         /* --- Hero Section --- */
         .hero {
-            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1546445317-29f4545e9d53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Imagem genérica de gado */
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(46, 125, 50, 0.7)), url('video-horizontal.mp4');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -97,6 +97,24 @@
             text-align: center;
             color: var(--white);
             padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(46, 125, 50, 0.7));
+            z-index: 1;
+        }
+
+        .hero > div {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -289,6 +307,9 @@
     </header>
 
     <section class="hero">
+        <video autoplay muted loop style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            <source src="video-horizontal.mp4" type="video/mp4">
+        </video>
         <div class="container">
             <h1>Pesagem de Gado Inteligente<br>Sem Estresse e Sem Balança</h1>
             <p>Utilizamos Visão Computacional e Inteligência Artificial para monitorar o peso do seu rebanho em tempo real. Ideal para pequenos e médios produtores.</p>
@@ -331,7 +352,10 @@
                     </ul>
                 </div>
                 <div class="solution-img">
-                    <img src="diagrama.png" alt="Esquema de funcionamento FaceBoi">
+                    <video width="100%" height="auto" autoplay muted loop style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                        <source src="video-vertical.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo HTML5.
+                    </video>
                     <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">Sistema de câmeras e RFID alimentado por energia solar.</p>
                 </div>
             </div>
@@ -362,7 +386,7 @@
         <div class="container">
             <h2 class="section-title">Quem Somos</h2>
             <p class="team-description">
-                Somos uma equipe que une a academia ao campo. Engenheiros da UFC e UECE com vivência real na pecuária e especialização em sistemas embarcados e Inteligência Artificial.
+                Somos uma equipe que une a academia ao campo. Engenheiros da UFC com vivência real na pecuária e especialização em sistemas embarcados e Inteligência Artificial.
             </p>
         </div>
     </section>
@@ -379,7 +403,6 @@
             </div>
             <div class="copyright">
                 <p>&copy; 2025 FaceBoi Tecnologia. Todos os direitos reservados.</p>
-                <p style="font-size: 0.8rem; margin-top: 5px;">Projeto alinhado aos ODS da ONU [YouTube Pitch].</p>
             </div>
         </div>
     </footer>
